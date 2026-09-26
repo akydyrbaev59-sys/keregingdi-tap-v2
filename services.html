@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Қызметтер — Keregingdi Tap</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo">
+        <img src="images/logo-main.png" alt="Keregingdi Tap">
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="index.html" data-i18n="home">Басты бет</a>
+        <a href="services.html" class="active" data-i18n="services">Қызметтер</a>
+        <a href="requests.html" data-i18n="requests">Сұраныстар</a>
+        <a href="favorites.html" data-i18n="favorites">Таңдаулылар</a>
+        <a href="support.html" data-i18n="support">Қолдау</a>
+      </nav>
+
+      <div class="header-actions">
+
+        <div class="language-switcher">
+          <button class="lang-btn active" data-lang="kk">ҚАЗ</button>
+          <span>|</span>
+          <button class="lang-btn" data-lang="ru">РУС</button>
+        </div>
+
+        <a href="login.html" class="login-btn" data-i18n="login">
+          Кіру
+        </a>
+
+        <a href="add-service.html" class="add-btn">
+          + <span data-i18n="addService">Қызмет қосу</span>
+        </a>
+
+      </div>
+
+      <button class="menu-btn" id="menuBtn">
+        ☰
+      </button>
+
+    </div>
+  </header>
+
+
+  <div class="mobile-menu" id="mobileMenu">
+
+    <div class="mobile-language-switcher">
+      <div class="language-switcher">
+        <button class="lang-btn active" data-lang="kk">ҚАЗ</button>
+        <span>|</span>
+        <button class="lang-btn" data-lang="ru">РУС</button>
+      </div>
+    </div>
+
+    <a href="index.html" data-i18n="home">Басты бет</a>
+    <a href="services.html" data-i18n="services">Қызметтер</a>
+    <a href="requests.html" data-i18n="requests">Сұраныстар</a>
+    <a href="favorites.html" data-i18n="favorites">Таңдаулылар</a>
+    <a href="profile.html" data-i18n="profile">Профиль</a>
+    <a href="support.html" data-i18n="support">Қолдау</a>
+
+  </div>
+
+
+  <main class="services-page">
+
+    <section class="page-top">
+      <div class="container">
+
+        <button
+          class="back-btn"
+          onclick="goBack()"
+          data-i18n="back"
+        >
+          ← Артқа
+        </button>
+
+        <div class="page-heading">
+
+          <div>
+            <span class="page-label">
+              Keregingdi Tap
+            </span>
+
+            <h1 data-i18n="services">
+              Қызметтер
+            </h1>
+
+            <p data-i18n="realServicesOnlyText">
+              Бұл жерде тек қолданушылар өздері жариялаған нақты қызметтер көрсетіледі.
+            </p>
+          </div>
+
+          <a href="add-service.html" class="add-btn">
+            + <span data-i18n="addService">Қызмет қосу</span>
+          </a>
+
+        </div>
+
+
+        <div class="services-search">
+
+          <input
+            type="text"
+            id="servicesSearch"
+            data-i18n-placeholder="servicesSearchPlaceholder"
+            placeholder="Қызмет немесе маман іздеу..."
+          >
+
+          <button
+            id="servicesSearchBtn"
+            data-i18n="search"
+          >
+            Іздеу
+          </button>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="services-content section">
+      <div class="container">
+
+        <div class="filter-row">
+
+          <button
+            class="filter-chip active"
+            data-category="all"
+            data-i18n="all"
+          >
+            Барлығы
+          </button>
+
+          <button
+            class="filter-chip"
+            data-category="plumber"
+            data-i18n="plumber"
+          >
+            Сантехник
+          </button>
+
+          <button
+            class="filter-chip"
+            data-category="electrician"
+            data-i18n="electrician"
+          >
+            Электрик
+          </button>
+
+          <button
+            class="filter-chip"
+            data-category="auto"
+            data-i18n="auto"
+          >
+            Авто қызмет
+          </button>
+
+          <button
+            class="filter-chip"
+            data-category="beauty"
+            data-i18n="beauty"
+          >
+            Beauty
+          </button>
+
+          <button
+            class="filter-chip"
+            data-category="cleaning"
+            data-i18n="cleaning"
+          >
+            Тазалық
+          </button>
+
+          <button
+            class="filter-chip"
+            data-category="delivery"
+            data-i18n="delivery"
+          >
+            Жеткізу
+          </button>
+
+          <button
+            class="filter-chip"
+            data-category="repair"
+            data-i18n="repair"
+          >
+            Жөндеу
+          </button>
+
+          <button
+            class="filter-chip"
+            data-category="education"
+            data-i18n="education"
+          >
+            Оқу
+          </button>
+
+          <button
+            class="filter-chip"
+            data-category="moving"
+            data-i18n="moving"
+          >
+            Жүк тасу
+          </button>
+
+        </div>
+
+
+        <div class="services-toolbar">
+
+          <p>
+            <span data-i18n="foundServices">
+              Табылған қызметтер:
+            </span>
+
+            <strong id="serviceCount">0</strong>
+          </p>
+
+          <select id="sortServices">
+
+            <option value="default" data-i18n="sort">
+              Сұрыптау
+            </option>
+
+            <option value="rating" data-i18n="sortRating">
+              Рейтинг бойынша
+            </option>
+
+            <option value="price-low" data-i18n="sortCheap">
+              Бағасы арзан
+            </option>
+
+            <option value="price-high" data-i18n="sortExpensive">
+              Бағасы қымбат
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!--
+          Нақты қызметтер кейін база қосылған кезде
+          осы блоктың ішіне автоматты түрде шығады.
+        -->
+        <div class="service-grid" id="serviceGrid"></div>
+
+
+        <div
+          class="empty-services"
+          id="emptyServices"
+          style="display: block;"
+        >
+
+          <div>🔎</div>
+
+          <h3 data-i18n="noRealServices">
+            Әзірге қызмет жарияланбаған
+          </h3>
+
+          <p data-i18n="noRealServicesText">
+            Бірінші нақты қызмет жарияланғаннан кейін ол осы жерде көрінеді.
+          </p>
+
+          <a
+            href="add-service.html"
+            class="primary-btn"
+            data-i18n="publishFirstService"
+            style="margin-top: 20px;"
+          >
+            Қызмет жариялау
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+
+        <img src="images/logo-main.png" alt="Keregingdi Tap">
+
+        <p data-i18n="slogan">
+          Қызмет ізде. Қызмет ұсын.
+        </p>
+
+      </div>
+
+      <div class="footer-links">
+
+        <a href="services.html" data-i18n="services">
+          Қызметтер
+        </a>
+
+        <a href="add-service.html" data-i18n="addService">
+          Қызмет қосу
+        </a>
+
+        <a href="requests.html" data-i18n="requests">
+          Сұраныстар
+        </a>
+
+        <a href="support.html" data-i18n="support">
+          Қолдау
+        </a>
+
+      </div>
+
+      <p class="copyright">
+        © 2026 Keregingdi Tap
+      </p>
+
+    </div>
+
+  </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+<script src="services.js"></script>
+
+</body>
+</html>

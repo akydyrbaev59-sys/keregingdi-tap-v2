@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Қолдау — Keregingdi Tap</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo">
+        <img src="images/logo-main.png" alt="Keregingdi Tap">
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="index.html" data-i18n="home">Басты бет</a>
+        <a href="services.html" data-i18n="services">Қызметтер</a>
+        <a href="requests.html" data-i18n="requests">Сұраныстар</a>
+        <a href="favorites.html" data-i18n="favorites">Таңдаулылар</a>
+        <a href="support.html" class="active" data-i18n="support">Қолдау</a>
+      </nav>
+
+      <div class="header-actions">
+
+        <div class="language-switcher">
+          <button class="lang-btn active" data-lang="kk">ҚАЗ</button>
+          <span>|</span>
+          <button class="lang-btn" data-lang="ru">РУС</button>
+        </div>
+
+        <a href="login.html" class="login-btn" data-i18n="login">
+          Кіру
+        </a>
+
+        <a href="add-service.html" class="add-btn">
+          + <span data-i18n="addService">Қызмет қосу</span>
+        </a>
+
+      </div>
+
+      <button class="menu-btn" id="menuBtn">
+        ☰
+      </button>
+
+    </div>
+  </header>
+
+
+  <div class="mobile-menu" id="mobileMenu">
+
+    <div class="mobile-language-switcher">
+      <div class="language-switcher">
+        <button class="lang-btn active" data-lang="kk">ҚАЗ</button>
+        <span>|</span>
+        <button class="lang-btn" data-lang="ru">РУС</button>
+      </div>
+    </div>
+
+    <a href="index.html" data-i18n="home">Басты бет</a>
+    <a href="services.html" data-i18n="services">Қызметтер</a>
+    <a href="requests.html" data-i18n="requests">Сұраныстар</a>
+    <a href="favorites.html" data-i18n="favorites">Таңдаулылар</a>
+    <a href="profile.html" data-i18n="profile">Профиль</a>
+    <a href="support.html" data-i18n="support">Қолдау</a>
+
+  </div>
+
+
+  <main class="support-page">
+
+    <section class="page-top">
+      <div class="container">
+
+        <button
+          class="back-btn"
+          onclick="goBack()"
+          data-i18n="back"
+        >
+          ← Артқа
+        </button>
+
+        <div class="page-heading">
+
+          <div>
+
+            <span class="page-label">
+              Keregingdi Tap
+            </span>
+
+            <h1 data-i18n="support">
+              Қолдау
+            </h1>
+
+            <p data-i18n="supportPageText">
+              Сайт бойынша сұрағың немесе мәселең болса, админге тікелей жаза аласың.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="section">
+
+      <div class="container support-layout">
+
+        <div>
+
+          <div class="support-intro-card">
+
+            <div class="support-big-icon">
+              💬
+            </div>
+
+            <div>
+
+              <h2 data-i18n="howCanWeHelp">
+                Қалай көмектесе аламыз?
+              </h2>
+
+              <p data-i18n="chooseProblemText">
+                Төменнен мәселенің түрін таңда. WhatsApp хабарламасы автоматты түрде дайындалады.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="support-options">
+
+            <button
+              type="button"
+              class="support-option active"
+              data-topic="Тіркелу мәселесі"
+              data-topic-kk="Тіркелу мәселесі"
+              data-topic-ru="Проблема с регистрацией"
+            >
+
+              <span>
+                👤
+              </span>
+
+              <div>
+
+                <h3 data-i18n="registrationProblem">
+                  Тіркелу мәселесі
+                </h3>
+
+                <p data-i18n="registrationProblemText">
+                  Аккаунт ашылмайды немесе кіре алмай жатырмын.
+                </p>
+
+              </div>
+
+            </button>
+
+
+            <button
+              type="button"
+              class="support-option"
+              data-topic="Қызмет жариялау"
+              data-topic-kk="Қызмет жариялау"
+              data-topic-ru="Публикация услуги"
+            >
+
+              <span>
+                🧰
+              </span>
+
+              <div>
+
+                <h3 data-i18n="servicePublishing">
+                  Қызмет жариялау
+                </h3>
+
+                <p data-i18n="servicePublishingText">
+                  Қызмет қосу немесе жариялау бойынша көмек керек.
+                </p>
+
+              </div>
+
+            </button>
+
+
+            <button
+              type="button"
+              class="support-option"
+              data-topic="Сұраныс"
+              data-topic-kk="Сұраныс"
+              data-topic-ru="Заявка"
+            >
+
+              <span>
+                📋
+              </span>
+
+              <div>
+
+                <h3 data-i18n="requestProblem">
+                  Сұраныс
+                </h3>
+
+                <p data-i18n="requestProblemText">
+                  Сұраныс жариялау немесе өшіру мәселесі.
+                </p>
+
+              </div>
+
+            </button>
+
+
+            <button
+              type="button"
+              class="support-option"
+              data-topic="Шағым"
+              data-topic-kk="Шағым"
+              data-topic-ru="Жалоба"
+            >
+
+              <span>
+                ⚠️
+              </span>
+
+              <div>
+
+                <h3 data-i18n="complaint">
+                  Шағым
+                </h3>
+
+                <p data-i18n="complaintText">
+                  Маманға, клиентке немесе жарияланымға шағымдану.
+                </p>
+
+              </div>
+
+            </button>
+
+
+            <button
+              type="button"
+              class="support-option"
+              data-topic="Аккаунт"
+              data-topic-kk="Аккаунт"
+              data-topic-ru="Аккаунт"
+            >
+
+              <span>
+                ⚙️
+              </span>
+
+              <div>
+
+                <h3 data-i18n="accountProblem">
+                  Аккаунт
+                </h3>
+
+                <p data-i18n="accountProblemText">
+                  Профиль немесе жеке мәліметтер бойынша сұрақ.
+                </p>
+
+              </div>
+
+            </button>
+
+
+            <button
+              type="button"
+              class="support-option"
+              data-topic="Басқа сұрақ"
+              data-topic-kk="Басқа сұрақ"
+              data-topic-ru="Другой вопрос"
+            >
+
+              <span>
+                ❓
+              </span>
+
+              <div>
+
+                <h3 data-i18n="otherQuestion">
+                  Басқа сұрақ
+                </h3>
+
+                <p data-i18n="otherQuestionText">
+                  Тізімде жоқ басқа мәселе немесе ұсыныс.
+                </p>
+
+              </div>
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <aside class="support-contact-card">
+
+          <span class="page-label" data-i18n="contactAdmin">
+            Админмен байланысу
+          </span>
+
+          <h2 data-i18n="writeUs">
+            Бізге жаз
+          </h2>
+
+          <p data-i18n="supportContactText">
+            Мәселені қысқаша түсіндір. WhatsApp ашылғанда дайын хабарлама жіберіледі.
+          </p>
+
+
+          <div class="support-selected">
+
+            <span data-i18n="selectedTopic">
+              Таңдалған тақырып
+            </span>
+
+            <strong id="selectedSupportTopic">
+              Тіркелу мәселесі
+            </strong>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label
+              for="supportMessage"
+              data-i18n="yourMessage"
+            >
+              Хабарлама
+            </label>
+
+            <textarea
+              id="supportMessage"
+              rows="6"
+              data-i18n-placeholder="supportMessagePlaceholder"
+              placeholder="Мәселеңді немесе сұрағыңды жаз..."
+            ></textarea>
+
+          </div>
+
+
+          <button
+            type="button"
+            class="support-whatsapp-main"
+            id="supportWhatsAppBtn"
+            data-i18n="writeAdminWhatsApp"
+          >
+            WhatsApp арқылы админге жазу
+          </button>
+
+
+          <p
+            class="support-small-text"
+            data-i18n="supportReplyText"
+          >
+            Хабарлама тікелей сайт админінің WhatsApp нөміріне жіберіледі.
+          </p>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+
+        <img
+          src="images/logo-main.png"
+          alt="Keregingdi Tap"
+        >
+
+        <p data-i18n="slogan">
+          Қызмет ізде. Қызмет ұсын.
+        </p>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <a href="services.html" data-i18n="services">
+          Қызметтер
+        </a>
+
+        <a href="add-service.html" data-i18n="addService">
+          Қызмет қосу
+        </a>
+
+        <a href="requests.html" data-i18n="requests">
+          Сұраныстар
+        </a>
+
+        <a href="support.html" data-i18n="support">
+          Қолдау
+        </a>
+
+      </div>
+
+
+      <p class="copyright">
+        © 2026 Keregingdi Tap
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

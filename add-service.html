@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Қызмет қосу — Keregingdi Tap</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo">
+        <img src="images/logo-main.png" alt="Keregingdi Tap">
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="index.html" data-i18n="home">Басты бет</a>
+        <a href="services.html" data-i18n="services">Қызметтер</a>
+        <a href="requests.html" data-i18n="requests">Сұраныстар</a>
+        <a href="favorites.html" data-i18n="favorites">Таңдаулылар</a>
+        <a href="support.html" data-i18n="support">Қолдау</a>
+      </nav>
+
+      <div class="header-actions">
+
+        <div class="language-switcher">
+          <button class="lang-btn active" data-lang="kk">ҚАЗ</button>
+          <span>|</span>
+          <button class="lang-btn" data-lang="ru">РУС</button>
+        </div>
+
+        <a
+          href="login.html"
+          class="login-btn"
+          data-i18n="login"
+        >
+          Кіру
+        </a>
+
+        <a href="add-service.html" class="add-btn">
+          + <span data-i18n="addService">Қызмет қосу</span>
+        </a>
+
+      </div>
+
+      <button class="menu-btn" id="menuBtn">☰</button>
+
+    </div>
+  </header>
+
+
+  <div class="mobile-menu" id="mobileMenu">
+
+    <div class="mobile-language-switcher">
+
+      <div class="language-switcher">
+        <button class="lang-btn active" data-lang="kk">ҚАЗ</button>
+        <span>|</span>
+        <button class="lang-btn" data-lang="ru">РУС</button>
+      </div>
+
+    </div>
+
+    <a href="index.html" data-i18n="home">Басты бет</a>
+    <a href="services.html" data-i18n="services">Қызметтер</a>
+    <a href="requests.html" data-i18n="requests">Сұраныстар</a>
+    <a href="favorites.html" data-i18n="favorites">Таңдаулылар</a>
+    <a href="profile.html" data-i18n="profile">Профиль</a>
+    <a href="support.html" data-i18n="support">Қолдау</a>
+
+  </div>
+
+
+  <main class="form-page">
+
+    <section class="form-page-top">
+      <div class="container">
+
+        <button
+          class="back-btn"
+          onclick="goBack()"
+          data-i18n="back"
+        >
+          ← Артқа
+        </button>
+
+        <div class="form-heading">
+
+          <span class="page-label">
+            Keregingdi Tap
+          </span>
+
+          <h1 data-i18n="publishYourService">
+            Қызметіңді жарияла
+          </h1>
+
+          <p data-i18n="publishYourServiceText">
+            Мәліметтерді толтыр. Жариялау админ тексергеннен кейін сайтқа шығады.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="form-section">
+
+      <div class="container form-layout">
+
+        <form class="service-form" id="addServiceForm">
+
+          <div class="form-block">
+
+            <div class="form-block-title">
+
+              <span>01</span>
+
+              <div>
+                <h2 data-i18n="basicInfo">
+                  Негізгі ақпарат
+                </h2>
+
+                <p data-i18n="basicInfoText">
+                  Қызмет туралы негізгі мәліметтерді толтыр.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+              <div class="form-group">
+
+                <label
+                  for="providerName"
+                  data-i18n="yourName"
+                >
+                  Аты-жөнің
+                </label>
+
+                <input
+                  type="text"
+                  id="providerName"
+                  name="providerName"
+                  data-i18n-placeholder="yourNamePlaceholder"
+                  placeholder="Мысалы: Ерлан"
+                  required
+                >
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label
+                  for="serviceTitle"
+                  data-i18n="serviceName"
+                >
+                  Қызмет атауы
+                </label>
+
+                <input
+                  type="text"
+                  id="serviceTitle"
+                  name="serviceTitle"
+                  data-i18n-placeholder="serviceNamePlaceholder"
+                  placeholder="Мысалы: Сантехник"
+                  required
+                >
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label
+                  for="category"
+                  data-i18n="category"
+                >
+                  Категория
+                </label>
+
+                <select id="category" name="category" required>
+
+                  <option
+                    value=""
+                    data-i18n="chooseCategory"
+                  >
+                    Категория таңдаңыз
+                  </option>
+
+                  <option value="plumber" data-i18n="plumber">
+                    Сантехник
+                  </option>
+
+                  <option value="electrician" data-i18n="electrician">
+                    Электрик
+                  </option>
+
+                  <option value="auto" data-i18n="auto">
+                    Авто қызмет
+                  </option>
+
+                  <option value="beauty" data-i18n="beauty">
+                    Beauty
+                  </option>
+
+                  <option value="cleaning" data-i18n="cleaning">
+                    Тазалық
+                  </option>
+
+                  <option value="delivery" data-i18n="delivery">
+                    Жеткізу
+                  </option>
+
+                  <option value="repair" data-i18n="repair">
+                    Жөндеу
+                  </option>
+
+                  <option value="education" data-i18n="education">
+                    Оқу
+                  </option>
+
+                  <option value="moving" data-i18n="moving">
+                    Жүк тасу
+                  </option>
+
+                  <option value="other" data-i18n="other">
+                    Басқа
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label
+                  for="price"
+                  data-i18n="price"
+                >
+                  Бағасы
+                </label>
+
+                <input
+                  type="number"
+                  id="price"
+                  name="price"
+                  data-i18n-placeholder="pricePlaceholder"
+                  placeholder="Мысалы: 5000"
+                  min="0"
+                  required
+                >
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="form-block">
+
+            <div class="form-block-title">
+
+              <span>02</span>
+
+              <div>
+                <h2 data-i18n="contacts">
+                  Байланыс
+                </h2>
+
+                <p data-i18n="contactsText">
+                  Клиент сенімен қалай байланысатынын көрсет.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+              <div class="form-group">
+
+                <label
+                  for="phone"
+                  data-i18n="phoneNumber"
+                >
+                  Телефон нөмірі
+                </label>
+
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="+7 700 000 00 00"
+                  required
+                >
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label
+                  for="whatsapp"
+                  data-i18n="whatsappNumber"
+                >
+                  WhatsApp нөмірі
+                </label>
+
+                <input
+                  type="tel"
+                  id="whatsapp"
+                  name="whatsapp"
+                  placeholder="+7 700 000 00 00"
+                  required
+                >
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label
+                  for="location"
+                  data-i18n="location"
+                >
+                  Орналасуы
+                </label>
+
+                <input
+                  type="text"
+                  id="location"
+                  name="location"
+                  data-i18n-placeholder="locationPlaceholder"
+                  placeholder="Мысалы: Ақтау, 12 мкр"
+                  required
+                >
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label
+                  for="workTime"
+                  data-i18n="workingHours"
+                >
+                  Жұмыс уақыты
+                </label>
+
+                <input
+                  type="text"
+                  id="workTime"
+                  name="workTime"
+                  data-i18n-placeholder="workTimePlaceholder"
+                  placeholder="Мысалы: 09:00 – 22:00"
+                >
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="form-block">
+
+            <div class="form-block-title">
+
+              <span>03</span>
+
+              <div>
+                <h2 data-i18n="serviceDescription">
+                  Қызмет сипаттамасы
+                </h2>
+
+                <p data-i18n="serviceDescriptionText">
+                  Не істейтініңді нақты жаз.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label
+                for="description"
+                data-i18n="fullDescription"
+              >
+                Толық сипаттама
+              </label>
+
+              <textarea
+                id="description"
+                name="description"
+                rows="7"
+                maxlength="700"
+                data-i18n-placeholder="descriptionPlaceholder"
+                placeholder="Қандай қызмет көрсететініңді, тәжірибеңді және басқа маңызды ақпаратты жаз..."
+                required
+              ></textarea>
+
+              <div class="textarea-info">
+                <span data-i18n="max700">
+                  700 таңбаға дейін
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="form-block">
+
+            <div class="form-block-title">
+
+              <span>04</span>
+
+              <div>
+                <h2 data-i18n="photos">
+                  Фотолар
+                </h2>
+
+                <p data-i18n="photosText">
+                  Жұмысыңның фотоларын кейін базаға жүктейтін боламыз.
+                </p>
+              </div>
+
+            </div>
+
+
+            <label class="upload-box">
+
+              <input
+                type="file"
+                id="servicePhotos"
+                accept="image/*"
+                multiple
+              >
+
+              <div class="upload-icon">
+                📷
+              </div>
+
+              <strong data-i18n="choosePhoto">
+                Фото таңда
+              </strong>
+
+              <span data-i18n="photoFormats">
+                PNG немесе JPG
+              </span>
+
+            </label>
+
+
+            <div
+              class="upload-preview"
+              id="uploadPreview"
+            ></div>
+
+          </div>
+
+
+          <div class="form-block">
+
+            <label class="checkbox-row">
+
+              <input
+                type="checkbox"
+                id="termsAgree"
+                required
+              >
+
+              <span data-i18n="termsText">
+                Жариялаған ақпараттың дұрыстығына жауап беремін және сайт ережелерімен келісемін.
+              </span>
+
+            </label>
+
+
+            <button
+              type="submit"
+              class="submit-service-btn"
+              data-i18n="sendForReview"
+            >
+              Тексеруге жіберу
+            </button>
+
+
+            <p
+              class="submit-note"
+              data-i18n="reviewNote"
+            >
+              Жариялау админ тексергеннен кейін ғана сайтқа шығады.
+            </p>
+
+          </div>
+
+        </form>
+
+
+        <aside class="form-side">
+
+          <div class="form-info-card">
+
+            <span class="form-side-icon">
+              🛡️
+            </span>
+
+            <h3 data-i18n="adminChecks">
+              Админ тексереді
+            </h3>
+
+            <p data-i18n="adminChecksText">
+              Әр жаңа қызмет автоматты түрде «Тексерілуде» статусына түседі.
+            </p>
+
+          </div>
+
+
+          <div class="form-info-card">
+
+            <span class="form-side-icon">
+              📱
+            </span>
+
+            <h3 data-i18n="clientsContact">
+              Клиенттер байланысады
+            </h3>
+
+            <p data-i18n="clientsContactText">
+              Жарияланғаннан кейін адамдар WhatsApp немесе телефон арқылы тікелей жаза алады.
+            </p>
+
+          </div>
+
+
+          <div class="form-info-card">
+
+            <span class="form-side-icon">
+              ✏️
+            </span>
+
+            <h3 data-i18n="editLater">
+              Кейін өзгерте аласың
+            </h3>
+
+            <p data-i18n="editLaterText">
+              Профиль арқылы өз жариялауыңды өзгерту немесе өшіру функциясын қосамыз.
+            </p>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+
+        <img
+          src="images/logo-main.png"
+          alt="Keregingdi Tap"
+        >
+
+        <p data-i18n="slogan">
+          Қызмет ізде. Қызмет ұсын.
+        </p>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <a href="services.html" data-i18n="services">
+          Қызметтер
+        </a>
+
+        <a href="add-service.html" data-i18n="addService">
+          Қызмет қосу
+        </a>
+
+        <a href="requests.html" data-i18n="requests">
+          Сұраныстар
+        </a>
+
+        <a href="support.html" data-i18n="support">
+          Қолдау
+        </a>
+
+      </div>
+
+
+      <p class="copyright">
+        © 2026 Keregingdi Tap
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+</body>
+</html>

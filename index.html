@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Keregingdi Tap</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo">
+        <img src="images/logo-main.png" alt="Keregingdi Tap">
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="index.html" class="active" data-i18n="home">
+          Басты бет
+        </a>
+
+        <a href="services.html" data-i18n="services">
+          Қызметтер
+        </a>
+
+        <a href="requests.html" data-i18n="requests">
+          Сұраныстар
+        </a>
+
+        <a href="favorites.html" data-i18n="favorites">
+          Таңдаулылар
+        </a>
+
+        <a href="support.html" data-i18n="support">
+          Қолдау
+        </a>
+      </nav>
+
+      <div class="header-actions">
+
+        <div class="language-switcher">
+          <button class="lang-btn active" data-lang="kk">
+            ҚАЗ
+          </button>
+
+          <span>|</span>
+
+          <button class="lang-btn" data-lang="ru">
+            РУС
+          </button>
+        </div>
+
+        <a
+          href="login.html"
+          class="login-btn"
+          data-i18n="login"
+        >
+          Кіру
+        </a>
+
+        <a href="add-service.html" class="add-btn">
+          + <span data-i18n="addService">Қызмет қосу</span>
+        </a>
+
+      </div>
+
+      <button class="menu-btn" id="menuBtn">
+        ☰
+      </button>
+
+    </div>
+  </header>
+
+
+  <div class="mobile-menu" id="mobileMenu">
+
+    <div class="mobile-language-switcher">
+
+      <div class="language-switcher">
+        <button class="lang-btn active" data-lang="kk">
+          ҚАЗ
+        </button>
+
+        <span>|</span>
+
+        <button class="lang-btn" data-lang="ru">
+          РУС
+        </button>
+      </div>
+
+    </div>
+
+    <a href="index.html" data-i18n="home">
+      Басты бет
+    </a>
+
+    <a href="services.html" data-i18n="services">
+      Қызметтер
+    </a>
+
+    <a href="requests.html" data-i18n="requests">
+      Сұраныстар
+    </a>
+
+    <a href="favorites.html" data-i18n="favorites">
+      Таңдаулылар
+    </a>
+
+    <a href="profile.html" data-i18n="profile">
+      Профиль
+    </a>
+
+    <a href="support.html" data-i18n="support">
+      Қолдау
+    </a>
+
+  </div>
+
+
+  <main>
+
+    <section class="hero">
+
+      <div class="container hero-content">
+
+        <div class="hero-text">
+
+          <span class="hero-label" data-i18n="heroLabel">
+            Ақтауда керек қызметті тап
+          </span>
+
+          <h1 data-i18n="heroTitle">
+            Керегіңді тап. Қызметіңді ұсын.
+          </h1>
+
+          <p data-i18n="heroText">
+            Қаладағы мамандарды, шеберлерді және түрлі қызметтерді
+            бір жерден оңай тап.
+          </p>
+
+
+          <div class="search-box">
+
+            <span class="search-icon">
+              🔎
+            </span>
+
+            <input
+              type="text"
+              id="mainSearch"
+              data-i18n-placeholder="searchPlaceholder"
+              placeholder="Мысалы: сантехник, электрик, курьер..."
+            >
+
+            <button
+              onclick="searchService()"
+              data-i18n="search"
+            >
+              Іздеу
+            </button>
+
+          </div>
+
+
+          <div class="hero-buttons">
+
+            <a
+              href="services.html"
+              class="primary-btn"
+              data-i18n="findService"
+            >
+              Қызмет іздеу
+            </a>
+
+            <a
+              href="add-service.html"
+              class="secondary-btn"
+              data-i18n="offerService"
+            >
+              Қызмет ұсыну
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+          <div class="hero-card-icon">
+            🔍
+          </div>
+
+          <h3 data-i18n="whoNeeded">
+            Саған кім керек?
+          </h3>
+
+          <p data-i18n="whoNeededText">
+            Керек маманды іздеу арқылы бірнеше секундта таба аласың.
+          </p>
+
+          <div class="hero-stat">
+
+            <div>
+              <strong>24/7</strong>
+              <span data-i18n="servicesWord">
+                Қызметтер
+              </span>
+            </div>
+
+            <div>
+              <strong>100%</strong>
+              <span data-i18n="comfortable">
+                Ыңғайлы
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="categories section">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <div>
+            <span data-i18n="categories">
+              Категориялар
+            </span>
+
+            <h2 data-i18n="whatService">
+              Қандай қызмет керек?
+            </h2>
+          </div>
+
+          <a href="services.html" data-i18n="viewAll">
+            Барлығын көру →
+          </a>
+
+        </div>
+
+
+        <div class="category-grid">
+
+          <a
+            href="services.html?category=plumber"
+            class="category-card"
+          >
+            <img
+              src="images/cat-plumber.png"
+              alt="Сантехник"
+            >
+
+            <h3 data-i18n="plumber">
+              Сантехник
+            </h3>
+
+            <p data-i18n="plumberDesc">
+              Құбыр, кран, су жүйесі
+            </p>
+          </a>
+
+
+          <a
+            href="services.html?category=electrician"
+            class="category-card"
+          >
+            <img
+              src="images/cat-electrician.png"
+              alt="Электрик"
+            >
+
+            <h3 data-i18n="electrician">
+              Электрик
+            </h3>
+
+            <p data-i18n="electricianDesc">
+              Электр жөндеу
+            </p>
+          </a>
+
+
+          <a
+            href="services.html?category=auto"
+            class="category-card"
+          >
+            <img
+              src="images/cat-auto.png"
+              alt="Авто қызмет"
+            >
+
+            <h3 data-i18n="auto">
+              Авто қызмет
+            </h3>
+
+            <p data-i18n="autoDesc">
+              Көлік жөндеу
+            </p>
+          </a>
+
+
+          <a
+            href="services.html?category=beauty"
+            class="category-card"
+          >
+            <img
+              src="images/cat-beauty.png"
+              alt="Beauty"
+            >
+
+            <h3 data-i18n="beauty">
+              Beauty
+            </h3>
+
+            <p data-i18n="beautyDesc">
+              Сұлулық қызметтері
+            </p>
+          </a>
+
+
+          <a
+            href="services.html?category=cleaning"
+            class="category-card"
+          >
+            <img
+              src="images/cat-cleaning.png"
+              alt="Тазалық"
+            >
+
+            <h3 data-i18n="cleaning">
+              Тазалық
+            </h3>
+
+            <p data-i18n="cleaningDesc">
+              Үй және офис тазалау
+            </p>
+          </a>
+
+
+          <a
+            href="services.html?category=delivery"
+            class="category-card"
+          >
+            <img
+              src="images/cat-delivery.png"
+              alt="Жеткізу"
+            >
+
+            <h3 data-i18n="delivery">
+              Жеткізу
+            </h3>
+
+            <p data-i18n="deliveryDesc">
+              Курьер және доставка
+            </p>
+          </a>
+
+
+          <a
+            href="services.html?category=repair"
+            class="category-card"
+          >
+            <img
+              src="images/cat-repair.png"
+              alt="Жөндеу"
+            >
+
+            <h3 data-i18n="repair">
+              Жөндеу
+            </h3>
+
+            <p data-i18n="repairDesc">
+              Үй және техника жөндеу
+            </p>
+          </a>
+
+
+          <a
+            href="services.html?category=education"
+            class="category-card"
+          >
+            <img
+              src="images/cat-education.png"
+              alt="Оқу"
+            >
+
+            <h3 data-i18n="education">
+              Оқу
+            </h3>
+
+            <p data-i18n="educationDesc">
+              Репетитор және курстар
+            </p>
+          </a>
+
+
+          <a
+            href="services.html?category=moving"
+            class="category-card"
+          >
+            <img
+              src="images/cat-moving.png"
+              alt="Жүк тасу"
+            >
+
+            <h3 data-i18n="moving">
+              Жүк тасу
+            </h3>
+
+            <p data-i18n="movingDesc">
+              Көшіру және тасымал
+            </p>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="action-section">
+
+      <div class="container">
+
+        <div class="action-grid">
+
+          <a
+            href="add-service.html"
+            class="action-card service-offer"
+          >
+
+            <div class="action-icon">
+              🧰
+            </div>
+
+            <div>
+
+              <span data-i18n="areYouSpecialist">
+                Мамансың ба?
+              </span>
+
+              <h3 data-i18n="publishService">
+                Қызметіңді жарияла
+              </h3>
+
+              <p data-i18n="publishServiceText">
+                Клиенттер сені өздері тапсын.
+              </p>
+
+            </div>
+
+          </a>
+
+
+          <a
+            href="requests.html"
+            class="action-card service-request"
+          >
+
+            <div class="action-icon">
+              🙋
+            </div>
+
+            <div>
+
+              <span data-i18n="needSpecialist">
+                Маман керек пе?
+              </span>
+
+              <h3 data-i18n="publishRequest">
+                Сұраныс жарияла
+              </h3>
+
+              <p data-i18n="publishRequestText">
+                Не керек екенін жаз, мамандар өздері байланыссын.
+              </p>
+
+            </div>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="urgent-section section">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <div>
+
+            <span data-i18n="urgentHelp">
+              Шұғыл көмек
+            </span>
+
+            <h2 data-i18n="services247">
+              24/7 қызметтер
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="urgent-grid">
+
+          <a href="services.html?category=electrician">
+            ⚡
+            <span data-i18n="electrician">
+              Электрик
+            </span>
+          </a>
+
+          <a href="services.html?category=plumber">
+            💧
+            <span data-i18n="plumber">
+              Сантехник
+            </span>
+          </a>
+
+          <a href="services.html?category=auto">
+            🚗
+            <span data-i18n="autoHelp">
+              Авто көмек
+            </span>
+          </a>
+
+          <a href="services.html">
+            🛠️
+            <span data-i18n="otherService">
+              Басқа қызмет
+            </span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="support-section">
+
+      <div class="container support-box">
+
+        <div>
+
+          <span data-i18n="needHelp">
+            Көмек керек пе?
+          </span>
+
+          <h2 data-i18n="adminQuestion">
+            Сайт бойынша сұрағың болса, админге жаз
+          </h2>
+
+          <p data-i18n="adminQuestionText">
+            Тіркелу, жариялау немесе басқа мәселе болса тікелей
+            WhatsApp арқылы хабарласа аласың.
+          </p>
+
+        </div>
+
+        <a
+          href="support.html"
+          class="support-btn"
+          data-i18n="writeAdmin"
+        >
+          Админге жазу
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+
+        <img
+          src="images/logo-main.png"
+          alt="Keregingdi Tap"
+        >
+
+        <p data-i18n="slogan">
+          Қызмет ізде. Қызмет ұсын.
+        </p>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <a
+          href="services.html"
+          data-i18n="services"
+        >
+          Қызметтер
+        </a>
+
+        <a
+          href="add-service.html"
+          data-i18n="addService"
+        >
+          Қызмет қосу
+        </a>
+
+        <a
+          href="requests.html"
+          data-i18n="requests"
+        >
+          Сұраныстар
+        </a>
+
+        <a
+          href="support.html"
+          data-i18n="support"
+        >
+          Қолдау
+        </a>
+
+      </div>
+
+
+      <p class="copyright">
+        © 2026 Keregingdi Tap
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Admin — Keregingdi Tap</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="admin-body">
+
+  <div class="admin-layout">
+
+    <aside class="admin-sidebar" id="adminSidebar">
+
+      <a href="index.html" class="admin-logo">
+        <img src="images/logo-main.png" alt="Keregingdi Tap">
+      </a>
+
+      <div class="admin-label" data-i18n="adminPanel">
+        АДМИН ПАНЕЛЬ
+      </div>
+
+      <nav class="admin-nav">
+
+        <button
+          class="admin-nav-btn active"
+          data-admin-tab="dashboard"
+        >
+          🏠
+          <span data-i18n="dashboard">Басты бет</span>
+        </button>
+
+        <button
+          class="admin-nav-btn"
+          data-admin-tab="services"
+        >
+          🧰
+          <span data-i18n="services">Қызметтер</span>
+        </button>
+
+        <button
+          class="admin-nav-btn"
+          data-admin-tab="requests"
+        >
+          📋
+          <span data-i18n="requests">Сұраныстар</span>
+        </button>
+
+        <button
+          class="admin-nav-btn"
+          data-admin-tab="users"
+        >
+          👥
+          <span data-i18n="users">Қолданушылар</span>
+        </button>
+
+        <button
+          class="admin-nav-btn"
+          data-admin-tab="reports"
+        >
+          ⚠️
+          <span data-i18n="reports">Шағымдар</span>
+        </button>
+
+        <button
+          class="admin-nav-btn"
+          data-admin-tab="vip"
+        >
+          ⭐
+          <span data-i18n="vipTop">TOP / VIP</span>
+        </button>
+
+      </nav>
+
+
+      <div class="admin-sidebar-bottom">
+
+        <div class="language-switcher">
+          <button class="lang-btn active" data-lang="kk">ҚАЗ</button>
+          <span>|</span>
+          <button class="lang-btn" data-lang="ru">РУС</button>
+        </div>
+
+        <a href="index.html" data-i18n="openSite">
+          ← Сайтқа өту
+        </a>
+
+        <button type="button" data-i18n="logout">
+          Шығу
+        </button>
+
+      </div>
+
+    </aside>
+
+
+    <main class="admin-main">
+
+      <header class="admin-topbar">
+
+        <div>
+
+          <button
+            type="button"
+            class="admin-mobile-menu"
+            id="adminMobileMenu"
+          >
+            ☰
+          </button>
+
+          <span data-i18n="adminControl">
+            Keregingdi Tap басқару панелі
+          </span>
+
+          <h1 data-i18n="dashboard">
+            Басты бет
+          </h1>
+
+        </div>
+
+        <div class="admin-profile">
+
+          <div class="admin-avatar">
+            A
+          </div>
+
+          <div>
+            <strong data-i18n="administrator">
+              Администратор
+            </strong>
+
+            <span>
+              Keregingdi Tap
+            </span>
+          </div>
+
+        </div>
+
+      </header>
+
+
+      <!-- DASHBOARD -->
+      <section
+        class="admin-panel active"
+        id="dashboard"
+      >
+
+        <div class="admin-stats">
+
+          <div class="admin-stat-card">
+
+            <div>👥</div>
+
+            <span data-i18n="registeredUsers">
+              Тіркелген қолданушылар
+            </span>
+
+            <strong>0</strong>
+
+          </div>
+
+
+          <div class="admin-stat-card">
+
+            <div>🧰</div>
+
+            <span data-i18n="publishedServices">
+              Жарияланған қызметтер
+            </span>
+
+            <strong>0</strong>
+
+          </div>
+
+
+          <div class="admin-stat-card">
+
+            <div>⏳</div>
+
+            <span data-i18n="waitingReview">
+              Тексеруді күтіп тұр
+            </span>
+
+            <strong>0</strong>
+
+          </div>
+
+
+          <div class="admin-stat-card">
+
+            <div>⚠️</div>
+
+            <span data-i18n="activeReports">
+              Белсенді шағымдар
+            </span>
+
+            <strong>0</strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="admin-grid">
+
+          <div class="admin-box">
+
+            <div class="admin-box-title">
+
+              <h2 data-i18n="waitingModeration">
+                Модерация күтіп тұрғандар
+              </h2>
+
+              <p data-i18n="checkBeforePublish">
+                Жаңа қызметтер жіберілгенде осы жерде шығады.
+              </p>
+
+            </div>
+
+
+            <div class="profile-empty">
+
+              <div>🧰</div>
+
+              <h3 data-i18n="noModeration">
+                Әзірге тексеретін қызмет жоқ
+              </h3>
+
+              <p data-i18n="noModerationText">
+                Қолданушы жаңа қызмет жібергенде осы жерде көрінеді.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="admin-box">
+
+            <div class="admin-box-title">
+
+              <h2 data-i18n="latestActivity">
+                Соңғы әрекеттер
+              </h2>
+
+              <p data-i18n="siteActivity">
+                Нақты әрекеттер база қосылғаннан кейін көрінеді.
+              </p>
+
+            </div>
+
+
+            <div class="profile-empty">
+
+              <div>📊</div>
+
+              <h3 data-i18n="noActivity">
+                Әзірге әрекет жоқ
+              </h3>
+
+              <p data-i18n="noActivityText">
+                Тіркелу, қызмет жариялау және шағымдар кейін осы жерде шығады.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- SERVICES -->
+      <section
+        class="admin-panel"
+        id="services"
+      >
+
+        <div class="admin-section-header">
+
+          <div>
+
+            <h2 data-i18n="serviceModeration">
+              Қызметтерді модерациялау
+            </h2>
+
+            <p data-i18n="serviceModerationText">
+              Қолданушылар жіберген нақты қызметтерді осы жерден басқарасың.
+            </p>
+
+          </div>
+
+          <select>
+
+            <option data-i18n="allStatuses">
+              Барлық статус
+            </option>
+
+            <option data-i18n="underReview">
+              Тексерілуде
+            </option>
+
+            <option data-i18n="published">
+              Жарияланды
+            </option>
+
+            <option data-i18n="rejected">
+              Қабылданбады
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="profile-empty">
+
+          <div>🧰</div>
+
+          <h3 data-i18n="noAdminServices">
+            Әзірге қызмет жоқ
+          </h3>
+
+          <p data-i18n="noAdminServicesText">
+            Жаңа қызмет жіберілгенде осы бөлімде пайда болады.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- REQUESTS -->
+      <section
+        class="admin-panel"
+        id="requests"
+      >
+
+        <div class="admin-section-header">
+
+          <div>
+
+            <h2 data-i18n="userRequests">
+              Қолданушылар сұраныстары
+            </h2>
+
+            <p data-i18n="userRequestsText">
+              Нақты жарияланған сұраныстарды осы жерден бақылайсың.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="profile-empty">
+
+          <div>📋</div>
+
+          <h3 data-i18n="noAdminRequests">
+            Әзірге сұраныс жоқ
+          </h3>
+
+          <p data-i18n="noAdminRequestsText">
+            Қолданушы сұраныс жариялағанда осы жерде көрінеді.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- USERS -->
+      <section
+        class="admin-panel"
+        id="users"
+      >
+
+        <div class="admin-section-header">
+
+          <div>
+
+            <h2 data-i18n="users">
+              Қолданушылар
+            </h2>
+
+            <p data-i18n="usersText">
+              Нақты тіркелген аккаунттарды осы жерден басқарасың.
+            </p>
+
+          </div>
+
+          <input
+            type="search"
+            class="admin-search"
+            data-i18n-placeholder="searchUser"
+            placeholder="Қолданушы іздеу..."
+          >
+
+        </div>
+
+
+        <div class="profile-empty">
+
+          <div>👥</div>
+
+          <h3 data-i18n="noUsers">
+            Әзірге қолданушы тіркелмеген
+          </h3>
+
+          <p data-i18n="noUsersText">
+            Бірінші адам тіркелгеннен кейін осы жерде көрінеді.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- REPORTS -->
+      <section
+        class="admin-panel"
+        id="reports"
+      >
+
+        <div class="admin-section-header">
+
+          <div>
+
+            <h2 data-i18n="reports">
+              Шағымдар
+            </h2>
+
+            <p data-i18n="reportsText">
+              Нақты шағымдар келгенде осы жерден тексересің.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="profile-empty">
+
+          <div>⚠️</div>
+
+          <h3 data-i18n="noReports">
+            Әзірге шағым жоқ
+          </h3>
+
+          <p data-i18n="noReportsText">
+            Қолданушы шағым жібергенде осы жерде көрінеді.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- VIP -->
+      <section
+        class="admin-panel"
+        id="vip"
+      >
+
+        <div class="admin-section-header">
+
+          <div>
+
+            <h2 data-i18n="vipTop">
+              TOP / VIP
+            </h2>
+
+            <p data-i18n="vipText">
+              Ақылы көтеру жүйесін кейін база мен төлем қосылғанда іске қосамыз.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="vip-admin-grid">
+
+          <div class="vip-admin-card">
+
+            <span>TOP</span>
+
+            <h3 data-i18n="topPlacement">
+              TOP орналастыру
+            </h3>
+
+            <p data-i18n="topPlacementText">
+              Кейін қызметті тізімнің жоғарғы жағына көтеруге арналған мүмкіндік болады.
+            </p>
+
+          </div>
+
+
+          <div class="vip-admin-card featured">
+
+            <span>VIP</span>
+
+            <h3 data-i18n="vipPlacement">
+              VIP орналастыру
+            </h3>
+
+            <p data-i18n="vipPlacementText">
+              Кейін қызметті ерекше белгімен көрсетуге арналған мүмкіндік болады.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+<script src="admin.js"></script>
+
+</body>
+</html>

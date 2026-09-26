@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Сұраныстар — Keregingdi Tap</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo">
+        <img src="images/logo-main.png" alt="Keregingdi Tap">
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="index.html" data-i18n="home">Басты бет</a>
+        <a href="services.html" data-i18n="services">Қызметтер</a>
+        <a href="requests.html" class="active" data-i18n="requests">Сұраныстар</a>
+        <a href="favorites.html" data-i18n="favorites">Таңдаулылар</a>
+        <a href="support.html" data-i18n="support">Қолдау</a>
+      </nav>
+
+      <div class="header-actions">
+
+        <div class="language-switcher">
+          <button class="lang-btn active" data-lang="kk">ҚАЗ</button>
+          <span>|</span>
+          <button class="lang-btn" data-lang="ru">РУС</button>
+        </div>
+
+        <a href="login.html" class="login-btn" data-i18n="login">
+          Кіру
+        </a>
+
+        <a href="add-service.html" class="add-btn">
+          + <span data-i18n="addService">Қызмет қосу</span>
+        </a>
+
+      </div>
+
+      <button class="menu-btn" id="menuBtn">
+        ☰
+      </button>
+
+    </div>
+  </header>
+
+
+  <div class="mobile-menu" id="mobileMenu">
+
+    <div class="mobile-language-switcher">
+      <div class="language-switcher">
+        <button class="lang-btn active" data-lang="kk">ҚАЗ</button>
+        <span>|</span>
+        <button class="lang-btn" data-lang="ru">РУС</button>
+      </div>
+    </div>
+
+    <a href="index.html" data-i18n="home">Басты бет</a>
+    <a href="services.html" data-i18n="services">Қызметтер</a>
+    <a href="requests.html" data-i18n="requests">Сұраныстар</a>
+    <a href="favorites.html" data-i18n="favorites">Таңдаулылар</a>
+    <a href="profile.html" data-i18n="profile">Профиль</a>
+    <a href="support.html" data-i18n="support">Қолдау</a>
+
+  </div>
+
+
+  <main class="requests-page">
+
+    <section class="page-top">
+      <div class="container">
+
+        <button
+          class="back-btn"
+          onclick="goBack()"
+          data-i18n="back"
+        >
+          ← Артқа
+        </button>
+
+        <div class="page-heading">
+
+          <div>
+
+            <span class="page-label">
+              Keregingdi Tap
+            </span>
+
+            <h1 data-i18n="requests">
+              Сұраныстар
+            </h1>
+
+            <p data-i18n="requestsPageText">
+              Қолданушылар жариялаған нақты сұраныстар осы жерде көрінеді.
+            </p>
+
+          </div>
+
+          <a href="#requestForm" class="add-btn">
+            + <span data-i18n="addRequest">Сұраныс қосу</span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="section">
+      <div class="container requests-layout">
+
+        <div class="requests-main">
+
+          <div class="requests-toolbar">
+
+            <div>
+
+              <h2 data-i18n="latestRequests">
+                Соңғы сұраныстар
+              </h2>
+
+              <p data-i18n="specialistsCanReply">
+                Нақты сұраныстар жарияланғаннан кейін осы жерде шығады.
+              </p>
+
+            </div>
+
+            <select id="requestFilter">
+
+              <option value="all" data-i18n="allCategories">
+                Барлық категория
+              </option>
+
+              <option value="plumber" data-i18n="plumber">
+                Сантехник
+              </option>
+
+              <option value="electrician" data-i18n="electrician">
+                Электрик
+              </option>
+
+              <option value="auto" data-i18n="auto">
+                Авто қызмет
+              </option>
+
+              <option value="beauty" data-i18n="beauty">
+                Beauty
+              </option>
+
+              <option value="cleaning" data-i18n="cleaning">
+                Тазалық
+              </option>
+
+              <option value="delivery" data-i18n="delivery">
+                Жеткізу
+              </option>
+
+              <option value="repair" data-i18n="repair">
+                Жөндеу
+              </option>
+
+              <option value="education" data-i18n="education">
+                Оқу
+              </option>
+
+              <option value="moving" data-i18n="moving">
+                Жүк тасу
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!--
+            Нақты сұраныстар кейін база қосылғанда
+            осы жерге автоматты түрде шығады.
+          -->
+          <div class="request-list" id="requestList"></div>
+
+
+          <div
+            class="favorites-empty"
+            id="requestsEmpty"
+            style="display: block;"
+          >
+
+            <div>
+              📋
+            </div>
+
+            <h2 data-i18n="noRequestsYet">
+              Әзірге сұраныс жарияланбаған
+            </h2>
+
+            <p data-i18n="noRequestsYetText">
+              Бірінші нақты сұраныс жарияланғаннан кейін ол осы жерде көрінеді.
+            </p>
+
+            <a
+              href="#requestForm"
+              class="primary-btn"
+              data-i18n="publishRequest"
+            >
+              Сұраныс жариялау
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <aside class="request-form-card" id="requestForm">
+
+          <span class="page-label" data-i18n="publishRequest">
+            Сұраныс жариялау
+          </span>
+
+          <h2 data-i18n="whatDoYouNeed">
+            Саған қандай қызмет керек?
+          </h2>
+
+          <p data-i18n="requestFormText">
+            Мәліметтерді толтыр. База қосылғаннан кейін нақты сұранысың сайтқа жарияланады.
+          </p>
+
+
+          <form id="addRequestForm">
+
+            <div class="form-group">
+
+              <label for="requestTitle" data-i18n="whatNeeded">
+                Не керек?
+              </label>
+
+              <input
+                type="text"
+                id="requestTitle"
+                data-i18n-placeholder="requestTitlePlaceholder"
+                placeholder="Мысалы: сантехник керек"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="requestCategory" data-i18n="category">
+                Категория
+              </label>
+
+              <select id="requestCategory" required>
+
+                <option value="" data-i18n="choose">
+                  Таңдаңыз
+                </option>
+
+                <option value="plumber" data-i18n="plumber">
+                  Сантехник
+                </option>
+
+                <option value="electrician" data-i18n="electrician">
+                  Электрик
+                </option>
+
+                <option value="auto" data-i18n="auto">
+                  Авто қызмет
+                </option>
+
+                <option value="beauty" data-i18n="beauty">
+                  Beauty
+                </option>
+
+                <option value="cleaning" data-i18n="cleaning">
+                  Тазалық
+                </option>
+
+                <option value="delivery" data-i18n="delivery">
+                  Жеткізу
+                </option>
+
+                <option value="repair" data-i18n="repair">
+                  Жөндеу
+                </option>
+
+                <option value="education" data-i18n="education">
+                  Оқу
+                </option>
+
+                <option value="moving" data-i18n="moving">
+                  Жүк тасу
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="requestLocation" data-i18n="location">
+                Орналасуы
+              </label>
+
+              <input
+                type="text"
+                id="requestLocation"
+                data-i18n-placeholder="requestLocationPlaceholder"
+                placeholder="Мысалы: 12 мкр"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="requestBudget" data-i18n="budget">
+                Бюджет
+              </label>
+
+              <input
+                type="text"
+                id="requestBudget"
+                data-i18n-placeholder="requestBudgetPlaceholder"
+                placeholder="Мысалы: 5000 ₸ дейін"
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="requestDescription" data-i18n="fullInfo">
+                Толық ақпарат
+              </label>
+
+              <textarea
+                id="requestDescription"
+                rows="5"
+                data-i18n-placeholder="requestDescriptionPlaceholder"
+                placeholder="Не болғанын қысқаша түсіндір..."
+                required
+              ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="requestPhone" data-i18n="whatsappNumber">
+                WhatsApp нөмірі
+              </label>
+
+              <input
+                type="tel"
+                id="requestPhone"
+                placeholder="+7 700 000 00 00"
+                required
+              >
+
+            </div>
+
+
+            <button
+              type="submit"
+              class="submit-service-btn"
+              data-i18n="sendRequest"
+            >
+              Сұранысты жіберу
+            </button>
+
+          </form>
+
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+
+        <img src="images/logo-main.png" alt="Keregingdi Tap">
+
+        <p data-i18n="slogan">
+          Қызмет ізде. Қызмет ұсын.
+        </p>
+
+      </div>
+
+      <div class="footer-links">
+
+        <a href="services.html" data-i18n="services">
+          Қызметтер
+        </a>
+
+        <a href="add-service.html" data-i18n="addService">
+          Қызмет қосу
+        </a>
+
+        <a href="requests.html" data-i18n="requests">
+          Сұраныстар
+        </a>
+
+        <a href="support.html" data-i18n="support">
+          Қолдау
+        </a>
+
+      </div>
+
+      <p class="copyright">
+        © 2026 Keregingdi Tap
+      </p>
+
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+<script src="requests.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Профиль — Keregingdi Tap</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo">
+        <img src="images/logo-main.png" alt="Keregingdi Tap">
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="index.html" data-i18n="home">Басты бет</a>
+        <a href="services.html" data-i18n="services">Қызметтер</a>
+        <a href="requests.html" data-i18n="requests">Сұраныстар</a>
+        <a href="favorites.html" data-i18n="favorites">Таңдаулылар</a>
+        <a href="support.html" data-i18n="support">Қолдау</a>
+      </nav>
+
+      <div class="header-actions">
+
+        <div class="language-switcher">
+          <button class="lang-btn active" data-lang="kk">ҚАЗ</button>
+          <span>|</span>
+          <button class="lang-btn" data-lang="ru">РУС</button>
+        </div>
+
+        <a href="profile.html" class="login-btn">
+          Профиль
+        </a>
+
+        <a href="add-service.html" class="add-btn">
+          + <span data-i18n="addService">Қызмет қосу</span>
+        </a>
+
+      </div>
+
+      <button class="menu-btn" id="menuBtn">☰</button>
+
+    </div>
+  </header>
+
+
+  <div class="mobile-menu" id="mobileMenu">
+
+    <div class="mobile-language-switcher">
+      <div class="language-switcher">
+        <button class="lang-btn active" data-lang="kk">ҚАЗ</button>
+        <span>|</span>
+        <button class="lang-btn" data-lang="ru">РУС</button>
+      </div>
+    </div>
+
+    <a href="index.html" data-i18n="home">Басты бет</a>
+    <a href="services.html" data-i18n="services">Қызметтер</a>
+    <a href="requests.html" data-i18n="requests">Сұраныстар</a>
+    <a href="favorites.html" data-i18n="favorites">Таңдаулылар</a>
+    <a href="profile.html" data-i18n="profile">Профиль</a>
+    <a href="support.html" data-i18n="support">Қолдау</a>
+
+  </div>
+
+
+  <main class="profile-page">
+
+    <section class="profile-top">
+      <div class="container">
+
+        <button
+          class="back-btn"
+          onclick="goBack()"
+          data-i18n="back"
+        >
+          ← Артқа
+        </button>
+
+        <div class="profile-header">
+
+          <div class="profile-user">
+
+            <div class="profile-avatar">
+              👤
+            </div>
+
+            <div>
+
+              <span class="page-label" data-i18n="myProfile">
+                Менің профилім
+              </span>
+
+              <h1 id="profileFullName">
+                Жүктелуде...
+              </h1>
+
+              <p id="profileEmail">
+                ...
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="profile-info-grid">
+
+          <div class="profile-info-card">
+            <span>Email</span>
+            <strong id="profileEmailCard">—</strong>
+          </div>
+
+          <div class="profile-info-card">
+            <span data-i18n="phoneNumber">Телефон нөмірі</span>
+            <strong id="profilePhone">—</strong>
+          </div>
+
+          <div class="profile-info-card">
+            <span data-i18n="city">Қала</span>
+            <strong id="profileCity">—</strong>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="profile-content">
+
+      <div class="container profile-layout">
+
+        <aside class="profile-sidebar">
+
+          <button
+            class="profile-tab active"
+            data-tab="my-services"
+            data-i18n="myServices"
+          >
+            Менің қызметтерім
+          </button>
+
+          <button
+            class="profile-tab"
+            data-tab="my-requests"
+            data-i18n="myRequests"
+          >
+            Менің сұраныстарым
+          </button>
+
+          <button
+            class="profile-tab"
+            data-tab="my-favorites"
+            data-i18n="favorites"
+          >
+            Таңдаулылар
+          </button>
+
+          <button
+            class="profile-tab"
+            data-tab="settings"
+            data-i18n="settings"
+          >
+            Баптаулар
+          </button>
+
+          <button
+            type="button"
+            class="profile-tab logout-btn"
+            id="logoutBtn"
+            data-i18n="logout"
+          >
+            Шығу
+          </button>
+
+        </aside>
+
+
+        <div class="profile-main">
+
+          <section
+            class="profile-panel active"
+            id="my-services"
+          >
+
+            <div class="profile-section-title">
+
+              <div>
+
+                <h2 data-i18n="myServices">
+                  Менің қызметтерім
+                </h2>
+
+                <p data-i18n="myServicesText">
+                  Жариялаған нақты қызметтерің осы жерде көрінеді.
+                </p>
+
+              </div>
+
+              <a href="add-service.html" class="add-btn">
+                + <span data-i18n="addService">Қызмет қосу</span>
+              </a>
+
+            </div>
+
+
+            <div class="profile-empty">
+              <div>🧰</div>
+
+              <h3 data-i18n="noMyServices">
+                Әзірге қызмет жарияламадың
+              </h3>
+
+              <p data-i18n="noMyServicesText">
+                Қызмет жариялағаннан кейін ол осы жерде көрінеді.
+              </p>
+            </div>
+
+          </section>
+
+
+          <section
+            class="profile-panel"
+            id="my-requests"
+          >
+
+            <div class="profile-section-title">
+
+              <div>
+
+                <h2 data-i18n="myRequests">
+                  Менің сұраныстарым
+                </h2>
+
+                <p data-i18n="myRequestsText">
+                  Өзің жариялаған нақты сұраныстар осы жерде тұрады.
+                </p>
+
+              </div>
+
+              <a href="requests.html#requestForm" class="add-btn">
+                + <span data-i18n="addRequest">Сұраныс қосу</span>
+              </a>
+
+            </div>
+
+
+            <div class="profile-empty">
+
+              <div>📋</div>
+
+              <h3 data-i18n="noMyRequests">
+                Әзірге сұраныс жарияламадың
+              </h3>
+
+              <p data-i18n="noMyRequestsText">
+                Сұраныс жариялағаннан кейін ол осы жерде көрінеді.
+              </p>
+
+            </div>
+
+          </section>
+
+
+          <section
+            class="profile-panel"
+            id="my-favorites"
+          >
+
+            <div class="profile-section-title">
+
+              <div>
+
+                <h2 data-i18n="favorites">
+                  Таңдаулылар
+                </h2>
+
+                <p data-i18n="profileFavoritesText">
+                  Сақтаған нақты қызметтерің осы жерде көрінеді.
+                </p>
+
+              </div>
+
+              <a
+                href="favorites.html"
+                class="profile-edit-btn"
+                data-i18n="openFavorites"
+              >
+                Ашып көру
+              </a>
+
+            </div>
+
+
+            <div class="profile-empty">
+
+              <div>♡</div>
+
+              <h3 data-i18n="favoritesEmptyTitle">
+                Таңдаулылар әзірге бос
+              </h3>
+
+              <p data-i18n="favoritesEmptyText">
+                Нақты қызметті таңдаулыға қосқанда, ол осы жерде көрінеді.
+              </p>
+
+            </div>
+
+          </section>
+
+
+          <section
+            class="profile-panel"
+            id="settings"
+          >
+
+            <div class="profile-section-title">
+
+              <div>
+                <h2 data-i18n="settings">Баптаулар</h2>
+              </div>
+
+            </div>
+
+            <div class="profile-empty">
+
+              <div>⚙️</div>
+
+              <h3>
+                Аккаунт мәліметтері
+              </h3>
+
+              <p>
+                Профильді өзгерту функциясын келесі қадамда қосамыз.
+              </p>
+
+            </div>
+
+          </section>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+
+        <img src="images/logo-main.png" alt="Keregingdi Tap">
+
+        <p data-i18n="slogan">
+          Қызмет ізде. Қызмет ұсын.
+        </p>
+
+      </div>
+
+      <div class="footer-links">
+
+        <a href="services.html" data-i18n="services">
+          Қызметтер
+        </a>
+
+        <a href="add-service.html" data-i18n="addService">
+          Қызмет қосу
+        </a>
+
+        <a href="requests.html" data-i18n="requests">
+          Сұраныстар
+        </a>
+
+        <a href="support.html" data-i18n="support">
+          Қолдау
+        </a>
+
+      </div>
+
+      <p class="copyright">
+        © 2026 Keregingdi Tap
+      </p>
+
+    </div>
+
+  </footer>
+
+
+ <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+<script src="profile-services.js"></script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Қызмет туралы — Keregingdi Tap</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo">
+        <img src="images/logo-main.png" alt="Keregingdi Tap">
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="index.html" data-i18n="home">Басты бет</a>
+        <a href="services.html" class="active" data-i18n="services">Қызметтер</a>
+        <a href="requests.html" data-i18n="requests">Сұраныстар</a>
+        <a href="favorites.html" data-i18n="favorites">Таңдаулылар</a>
+        <a href="support.html" data-i18n="support">Қолдау</a>
+      </nav>
+
+      <div class="header-actions">
+
+        <div class="language-switcher">
+          <button class="lang-btn active" data-lang="kk">ҚАЗ</button>
+          <span>|</span>
+          <button class="lang-btn" data-lang="ru">РУС</button>
+        </div>
+
+        <a href="login.html" class="login-btn" data-i18n="login">
+          Кіру
+        </a>
+
+        <a href="add-service.html" class="add-btn">
+          + <span data-i18n="addService">Қызмет қосу</span>
+        </a>
+
+      </div>
+
+      <button class="menu-btn" id="menuBtn">
+        ☰
+      </button>
+
+    </div>
+  </header>
+
+
+  <div class="mobile-menu" id="mobileMenu">
+
+    <div class="mobile-language-switcher">
+      <div class="language-switcher">
+        <button class="lang-btn active" data-lang="kk">ҚАЗ</button>
+        <span>|</span>
+        <button class="lang-btn" data-lang="ru">РУС</button>
+      </div>
+    </div>
+
+    <a href="index.html" data-i18n="home">Басты бет</a>
+    <a href="services.html" data-i18n="services">Қызметтер</a>
+    <a href="requests.html" data-i18n="requests">Сұраныстар</a>
+    <a href="favorites.html" data-i18n="favorites">Таңдаулылар</a>
+    <a href="profile.html" data-i18n="profile">Профиль</a>
+    <a href="support.html" data-i18n="support">Қолдау</a>
+
+  </div>
+
+
+  <main class="detail-page">
+
+    <section class="detail-top">
+      <div class="container">
+
+        <button
+          class="back-btn"
+          onclick="goBack()"
+          data-i18n="back"
+        >
+          ← Артқа
+        </button>
+
+
+        <div
+          id="serviceLoading"
+          class="profile-empty"
+        >
+          <div style="font-size:54px;">⏳</div>
+
+          <h2>Жүктелуде...</h2>
+        </div>
+
+
+        <div
+          id="serviceNotFound"
+          class="profile-empty"
+          style="display:none;"
+        >
+          <div style="font-size:54px;">🧰</div>
+
+          <h2 data-i18n="noServiceSelected">
+            Қызмет табылмады
+          </h2>
+
+          <p data-i18n="noServiceSelectedText">
+            Бұл қызмет жоқ немесе жарияланбаған.
+          </p>
+
+          <a
+            href="services.html"
+            class="primary-btn"
+            style="margin-top:20px;"
+          >
+            Қызметтерді көру
+          </a>
+        </div>
+
+
+        <div
+          id="serviceDetail"
+          style="display:none;"
+        >
+
+          <div class="detail-layout">
+
+            <div class="detail-main">
+
+              <div class="detail-card">
+
+                <div class="service-card-top">
+
+                  <span
+                    class="service-category"
+                    id="detailCategory"
+                  >
+                    —
+                  </span>
+
+                  <span class="service-status">
+                    ✓ Жарияланды
+                  </span>
+
+                </div>
+
+
+                <h1 id="detailTitle">
+                  Қызмет
+                </h1>
+
+
+                <p
+                  class="service-description"
+                  id="detailDescription"
+                >
+                  —
+                </p>
+
+
+                <div class="service-meta">
+
+                  <span id="detailLocation">
+                    📍 —
+                  </span>
+
+                  <span id="detailWorkTime">
+                    🕒 —
+                  </span>
+
+                </div>
+
+
+                <div
+                  class="service-price"
+                  id="detailPrice"
+                  style="margin-top:20px;"
+                >
+                  —
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <aside class="detail-side">
+
+              <div class="form-info-card">
+
+                <span class="form-side-icon">
+                  📞
+                </span>
+
+                <h3>
+                  Байланыс
+                </h3>
+
+                <p id="detailPhone">
+                  —
+                </p>
+
+                <a
+                  id="callButton"
+                  href="#"
+                  class="primary-btn"
+                  style="
+                    display:block;
+                    margin-top:14px;
+                    text-align:center;
+                  "
+                >
+                  Қоңырау шалу
+                </a>
+
+                <a
+                  id="whatsappButton"
+                  href="#"
+                  class="profile-edit-btn"
+                  target="_blank"
+                  rel="noopener"
+                  style="
+                    display:block;
+                    margin-top:10px;
+                    text-align:center;
+                  "
+                >
+                  WhatsApp
+                </a>
+
+              </div>
+
+            </aside>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+
+        <img src="images/logo-main.png" alt="Keregingdi Tap">
+
+        <p data-i18n="slogan">
+          Қызмет ізде. Қызмет ұсын.
+        </p>
+
+      </div>
+
+      <div class="footer-links">
+
+        <a href="services.html" data-i18n="services">
+          Қызметтер
+        </a>
+
+        <a href="add-service.html" data-i18n="addService">
+          Қызмет қосу
+        </a>
+
+        <a href="requests.html" data-i18n="requests">
+          Сұраныстар
+        </a>
+
+        <a href="support.html" data-i18n="support">
+          Қолдау
+        </a>
+
+      </div>
+
+      <p class="copyright">
+        © 2026 Keregingdi Tap
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+  <script src="service-detail.js"></script>
+
+</body>
+</html>

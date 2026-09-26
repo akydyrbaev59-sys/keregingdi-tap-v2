@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Тіркелу — Keregingdi Tap</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo">
+        <img src="images/logo-main.png" alt="Keregingdi Tap">
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="index.html" data-i18n="home">Басты бет</a>
+        <a href="services.html" data-i18n="services">Қызметтер</a>
+        <a href="requests.html" data-i18n="requests">Сұраныстар</a>
+        <a href="favorites.html" data-i18n="favorites">Таңдаулылар</a>
+        <a href="support.html" data-i18n="support">Қолдау</a>
+      </nav>
+
+      <div class="header-actions">
+
+        <div class="language-switcher">
+          <button class="lang-btn active" data-lang="kk">ҚАЗ</button>
+          <span>|</span>
+          <button class="lang-btn" data-lang="ru">РУС</button>
+        </div>
+
+        <a href="login.html" class="login-btn" data-i18n="login">
+          Кіру
+        </a>
+
+        <a href="add-service.html" class="add-btn">
+          + <span data-i18n="addService">Қызмет қосу</span>
+        </a>
+
+      </div>
+
+      <button class="menu-btn" id="menuBtn">
+        ☰
+      </button>
+
+    </div>
+  </header>
+
+
+  <div class="mobile-menu" id="mobileMenu">
+
+    <div class="mobile-language-switcher">
+      <div class="language-switcher">
+        <button class="lang-btn active" data-lang="kk">ҚАЗ</button>
+        <span>|</span>
+        <button class="lang-btn" data-lang="ru">РУС</button>
+      </div>
+    </div>
+
+    <a href="index.html" data-i18n="home">Басты бет</a>
+    <a href="services.html" data-i18n="services">Қызметтер</a>
+    <a href="requests.html" data-i18n="requests">Сұраныстар</a>
+    <a href="favorites.html" data-i18n="favorites">Таңдаулылар</a>
+    <a href="profile.html" data-i18n="profile">Профиль</a>
+    <a href="support.html" data-i18n="support">Қолдау</a>
+
+  </div>
+
+
+  <main class="auth-page">
+
+    <section class="auth-section">
+
+      <div class="container">
+
+        <button
+          class="back-btn"
+          onclick="goBack()"
+          data-i18n="back"
+        >
+          ← Артқа
+        </button>
+
+        <div class="auth-layout">
+
+          <div class="auth-info">
+
+            <span class="page-label">
+              Keregingdi Tap
+            </span>
+
+            <h1 data-i18n="createAccountTitle">
+              Жаңа аккаунт аш
+            </h1>
+
+            <p data-i18n="createAccountText">
+              Тіркеліп, өз қызметіңді жарияла, сұраныс қалдыр және ұнаған мамандарды таңдаулыға сақта.
+            </p>
+
+            <div class="auth-benefits">
+
+              <span data-i18n="registerBenefit1">
+                ✓ Қызмет жариялау
+              </span>
+
+              <span data-i18n="registerBenefit2">
+                ✓ Сұраныс қалдыру
+              </span>
+
+              <span data-i18n="registerBenefit3">
+                ✓ Профиль арқылы басқару
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="auth-card">
+
+            <h2 data-i18n="register">
+              Тіркелу
+            </h2>
+
+            <p data-i18n="registerCardText">
+              Аккаунт ашу үшін мәліметтеріңді толтыр.
+            </p>
+
+
+            <form id="registerForm">
+
+              <div class="form-group">
+
+                <label for="registerName" data-i18n="yourName">
+                  Аты-жөнің
+                </label>
+
+                <input
+                  type="text"
+                  id="registerName"
+                  data-i18n-placeholder="yourNamePlaceholder"
+                  placeholder="Мысалы: Азамат"
+                  required
+                >
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="registerEmail">
+                  Email
+                </label>
+
+                <input
+                  type="email"
+                  id="registerEmail"
+                  placeholder="example@gmail.com"
+                  required
+                >
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="registerPhone" data-i18n="phoneNumber">
+                  Телефон нөмірі
+                </label>
+
+                <input
+                  type="tel"
+                  id="registerPhone"
+                  placeholder="+7 700 000 00 00"
+                  required
+                >
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="registerCity" data-i18n="city">
+                  Қала
+                </label>
+
+                <input
+                  type="text"
+                  id="registerCity"
+                  data-i18n-placeholder="cityPlaceholder"
+                  placeholder="Мысалы: Ақтау"
+                  required
+                >
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="registerPassword" data-i18n="password">
+                  Құпиясөз
+                </label>
+
+                <input
+                  type="password"
+                  id="registerPassword"
+                  data-i18n-placeholder="createPasswordPlaceholder"
+                  placeholder="Құпиясөз ойлап тап"
+                  minlength="6"
+                  required
+                >
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="registerPasswordRepeat" data-i18n="repeatPassword">
+                  Құпиясөзді қайтала
+                </label>
+
+                <input
+                  type="password"
+                  id="registerPasswordRepeat"
+                  data-i18n-placeholder="repeatPasswordPlaceholder"
+                  placeholder="Құпиясөзді қайта енгіз"
+                  minlength="6"
+                  required
+                >
+
+              </div>
+
+
+              <label class="checkbox-row">
+
+                <input
+                  type="checkbox"
+                  id="registerTerms"
+                  required
+                >
+
+                <span data-i18n="registerTermsText">
+                  Сайт ережелерімен және жеке мәліметтерді өңдеу шарттарымен келісемін.
+                </span>
+
+              </label>
+
+
+              <button
+                type="submit"
+                class="submit-service-btn"
+                data-i18n="createAccount"
+              >
+                Аккаунт ашу
+              </button>
+
+            </form>
+
+
+            <div class="auth-bottom">
+
+              <span data-i18n="alreadyAccount">
+                Аккаунтың бар ма?
+              </span>
+
+              <a href="login.html" data-i18n="login">
+                Кіру
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+
+        <img src="images/logo-main.png" alt="Keregingdi Tap">
+
+        <p data-i18n="slogan">
+          Қызмет ізде. Қызмет ұсын.
+        </p>
+
+      </div>
+
+      <div class="footer-links">
+
+        <a href="services.html" data-i18n="services">
+          Қызметтер
+        </a>
+
+        <a href="add-service.html" data-i18n="addService">
+          Қызмет қосу
+        </a>
+
+        <a href="requests.html" data-i18n="requests">
+          Сұраныстар
+        </a>
+
+        <a href="support.html" data-i18n="support">
+          Қолдау
+        </a>
+
+      </div>
+
+      <p class="copyright">
+        © 2026 Keregingdi Tap
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- Supabase алдымен жүктеледі -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Сосын біздің код -->
+  <script src="script.js"></script>
+
+</body>
+</html>
