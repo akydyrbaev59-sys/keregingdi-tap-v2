@@ -3047,33 +3047,76 @@ async function loadProfile() {
   const profileFullName =
     document.getElementById("profileFullName");
 
-  if (!profileFullName) {
-    return;
-  }
+  if (!profileFullName) return;
 
-
-  if (!supabaseClient) {
-
-    window.location.href = "login.html";
-    return;
-
-  }
+  if (!supabaseClient) return;
 
 
   const {
-    data: { session }
+    data: { user },
+    error
   } =
-    await supabaseClient.auth.getSession();
+    await supabaseClient.auth.getUser();
 
 
-  if (!session) {
+  if (error || !user) {
 
-    window.location.href = "login.html";
+    window.location.href =
+      "login.html";
+
     return;
-
   }
 
 
+  const fullName =
+    user.user_metadata?.full_name ||
+    "Қолданушы";
+
+  const phone =
+    user.user_metadata?.phone ||
+    "—";
+
+  const city =
+    user.user_metadata?.city ||
+    "—";
+
+  const email =
+    user.email || "—";
+
+
+  profileFullName.textContent =
+    fullName;
+
+
+  const profileEmail =
+    document.getElementById("profileEmail");
+
+  const profileEmailCard =
+    document.getElementById("profileEmailCard");
+
+  const profilePhone =
+    document.getElementById("profilePhone");
+
+  const profileCity =
+    document.getElementById("profileCity");
+
+
+  if (profileEmail) {
+    profileEmail.textContent = email;
+  }
+
+  if (profileEmailCard) {
+    profileEmailCard.textContent = email;
+  }
+
+  if (profilePhone) {
+    profilePhone.textContent = phone;
+  }
+
+  if (profileCity) {
+    profileCity.textContent = city;
+  }
+}
   const user = session.user;
 
   const fullName =
