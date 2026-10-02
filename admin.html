@@ -395,28 +395,31 @@
           </div>
 
           <input
-            type="search"
-            class="admin-search"
-            data-i18n-placeholder="searchUser"
-            placeholder="Қолданушы іздеу..."
-          >
+  type="search"
+  id="adminUserSearch"
+  class="admin-search"
+  data-i18n-placeholder="searchUser"
+  placeholder="Қолданушы іздеу..."
+>
 
         </div>
 
 
-        <div class="profile-empty">
+        <div id="adminUsersList"></div>
 
-          <div>👥</div>
+<div id="adminUsersEmpty" class="profile-empty">
 
-          <h3 data-i18n="noUsers">
-            Әзірге қолданушы тіркелмеген
-          </h3>
+  <div>👥</div>
 
-          <p data-i18n="noUsersText">
-            Бірінші адам тіркелгеннен кейін осы жерде көрінеді.
-          </p>
+  <h3 data-i18n="noUsers">
+    Әзірге қолданушы тіркелмеген
+  </h3>
 
-        </div>
+  <p data-i18n="noUsersText">
+    Бірінші адам тіркелгеннен кейін осы жерде көрінеді.
+  </p>
+
+</div>
 
       </section>
 
@@ -529,6 +532,7 @@
 <script src="script.js?v=4"></script>
 
 <script src="admin-requests.js?v=2"></script>
+<script src="admin-users.js?v=1"></script>
 
 </body>
 </html>
