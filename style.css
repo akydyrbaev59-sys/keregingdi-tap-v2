@@ -4027,3 +4027,35 @@ img {
   }
 
 }
+@media (max-width: 700px) {
+
+  .header {
+    position: sticky !important;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .mobile-menu {
+    position: fixed !important;
+    top: 66px !important;
+    left: 0 !important;
+    right: 0 !important;
+
+    z-index: 9999 !important;
+
+    background: white;
+
+    padding: 15px 20px 22px;
+
+    border-bottom: 1px solid #e3e9ef;
+
+    box-shadow: 0 10px 30px rgba(25,45,65,0.10);
+  }
+
+  .mobile-menu.open {
+    display: flex !important;
+    flex-direction: column;
+    gap: 0;
+  }
+
+}
