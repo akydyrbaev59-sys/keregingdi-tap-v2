@@ -3042,6 +3042,10 @@ if (registerForm) {
 // REAL PROFILE — SUPABASE
 // ======================================
 
+ // ======================================
+// REAL PROFILE — SUPABASE
+// ======================================
+
 async function loadProfile() {
 
   const profileFullName =
@@ -3117,58 +3121,6 @@ async function loadProfile() {
     profileCity.textContent = city;
   }
 }
-  const user = session.user;
-
-  const fullName =
-    user.user_metadata?.full_name ||
-    "Қолданушы";
-
-  const phone =
-    user.user_metadata?.phone ||
-    "—";
-
-  const city =
-    user.user_metadata?.city ||
-    "—";
-
-  const email =
-    user.email || "—";
-
-
-  profileFullName.textContent =
-    fullName;
-
-
-  const profileEmail =
-    document.getElementById("profileEmail");
-
-  const profileEmailCard =
-    document.getElementById("profileEmailCard");
-
-  const profilePhone =
-    document.getElementById("profilePhone");
-
-  const profileCity =
-    document.getElementById("profileCity");
-
-
-  if (profileEmail) {
-    profileEmail.textContent = email;
-  }
-
-  if (profileEmailCard) {
-    profileEmailCard.textContent = email;
-  }
-
-  if (profilePhone) {
-    profilePhone.textContent = phone;
-  }
-
-  if (profileCity) {
-    profileCity.textContent = city;
-  }
-
-}
 
 
 const logoutBtn =
@@ -3193,9 +3145,12 @@ if (logoutBtn) {
 
 
 loadProfile();
+
+
 // ======================================
 // PROFILE TABS
 // ======================================
+
 
 const profileTabs =
   document.querySelectorAll(
